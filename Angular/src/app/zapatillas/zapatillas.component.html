@@ -1,0 +1,18 @@
+<h2>{{titulo}}</h2>
+
+<p>{{listado}}</p>
+
+<p>Añadir algo</p>
+<p>
+    <input type="text" [(ngModel)]="mi_marca">
+</p>
+<p>{{mi_marca}}</p>
+
+<ul>
+    <li *ngFor="let zapa of zapatillas">{{zapa.nombre}} - <strong>${{zapa.precio}}</strong>
+        <span *ngIf="zapa.precio < 80"
+            [style.background]="zapa.precio < 70 ? 'green' : 'transparent'"
+            [style.color]="zapa.precio < 70 ? 'white' : 'black'"
+            >¡EN OFERTA!</span>
+    </li>
+</ul>

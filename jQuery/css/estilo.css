@@ -1,0 +1,48 @@
+.elemento{
+    width: 250px;
+    height: 250px;
+    background-color: coral;
+    border: 4px solid brown;
+    margin: 20px;
+    float: left;
+}
+
+.lista-seleccionable li{
+    width: 80%;
+    padding: 20px;
+    border: 1px solid grey;
+    list-style: none;
+    cursor: pointer;
+}
+
+ul .ui-selecting{
+    border: 1px solid black;
+}
+
+ul .ui-selected{
+    border: 1px solid black;
+    background-color: grey;
+}
+
+#elemento-movido{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(154, 240, 132);
+    border: 4px solid rgb(29, 65, 20);
+}
+
+#area{
+    width: 400px;
+    height: 400px;
+    background-color: coral;
+    border: 4px solid brown;
+}
+
+.caja-efectos {
+    float: none;
+    display: none;
+}
+
+#popup {
+    display: none;
+}

@@ -1,0 +1,16 @@
+body {
+    background: url('../img/rojo.jpg');
+    background-attachment: fixed;
+}
+
+#logo,
+#menu ul li:hover,
+.button-more,
+.form-error{
+    background: #ca3413;
+}
+
+.ui-accordion-header-active{
+    background: #ca3413 !important;
+    border: 1px solid #ca3413 !important;
+}
