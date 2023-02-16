@@ -16,6 +16,7 @@ export class CreateComponent {
   public status: string = '';
   public filesToUpload: Array<File> = [];
   public save_project: any;
+  public url = Global.url;
 
   constructor(
     private _projectService: ProjectService,

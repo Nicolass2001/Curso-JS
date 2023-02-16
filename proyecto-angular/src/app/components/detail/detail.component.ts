@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentFixtureNoNgZone } from '@angular/core/testing';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Project } from 'src/app/models/project';
 import { Global } from 'src/app/services/global';
@@ -12,7 +13,8 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class DetailComponent implements OnInit{
   public url: string;
-  public project: any;
+  public project: Project;
+  public confirm: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -20,6 +22,7 @@ export class DetailComponent implements OnInit{
     private _route: ActivatedRoute
   ){
     this.url = Global.url;
+    this.confirm = false;
   }
 
   ngOnInit(): void {
@@ -28,6 +31,10 @@ export class DetailComponent implements OnInit{
 
       this.getProject(id)
     });
+  }
+
+  setConfirm(confirm: boolean){
+    this.confirm = confirm;
   }
 
   getProject(id: any){
@@ -39,5 +46,16 @@ export class DetailComponent implements OnInit{
         console.log(<any>error);
       }
     )
+  }
+
+  deleteProject(id:string){
+    this._projectService.deleteProject(id).subscribe(
+      response => {
+          this._router.navigate(['/proyectos']);
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 }
